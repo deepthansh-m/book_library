@@ -1,12 +1,12 @@
 class User < ApplicationRecord
   has_many :books, class_name: 'Book', foreign_key: 'user_id'
-  def self.create_user(name:, email:, number:)
-    User.create(name: name, email: email, number: number)
+  def self.create_user(name:, email:, phone:)
+    User.create(name: name, email: email, phone: phone)
   end
-  def self.update_user(id:, name:, email:, number:)
+  def self.update_user(id:, name:, email:, phone:)
     user = User.find_by_id(id)
     if user
-      user.update(name: name, email: email, number: number)
+      user.update(name: name, email: email, phone: phone)
     else
       puts "No User Found"
     end
